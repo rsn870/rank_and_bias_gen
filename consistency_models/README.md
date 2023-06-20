@@ -19,7 +19,7 @@ Added Implementations
 Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. We have added rank computation functions separately in utils.py. We will be adding inversion/interpolation functions soon for Junhss.We use the formula of computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. Please only refer to the modifications branch in the attached forked repository of Clone of simo's implementation. This has all the changes. This is **not** in sync with the master branch as the changes are not official by any means.
 
 
-Currently OpenAI's implementation and some JAX based implementations are not yet supported. OpenAI has a relatively complicated database that will take some time to port and experiment with. CD based training support has also not been added although this requires a separate diffusion model training step. 
+Currently OpenAI's implementation and some JAX based implementations are not yet supported. OpenAI has a relatively complicated codebase that will take some time to port and experiment with. CD based training support has also not been added although this requires a separate diffusion model training step. 
 
 ## Results 
 
