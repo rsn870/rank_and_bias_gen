@@ -8,3 +8,12 @@ an alternate way of learning the same PF-ODE with the same architecture this obs
 diverse data sources such as training, interpolated and random data which continues more or less as the process evolves backwards in time. This difference ties into the 
 observed bias as well. Above all the study raises questions on utilizing SDEs with unimodal convergent distribution for modelling unconditioned multimodal data. 
 
+
+Added Implementations
+- [x] Clone of Simo Link : 
+- [x] Kinyugo Link :
+- [x] Junhss Link :
+- [ ] OpenAI (official) Link : 
+
+Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. Adding rank computation functions 
+
