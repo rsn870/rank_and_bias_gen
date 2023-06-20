@@ -15,5 +15,5 @@ Added Implementations
 - [x] Junhss Link :
 - [ ] OpenAI (official) Link : 
 
-Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. Adding rank computation functions separately in utils.py We use the formula pf computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. 
+Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. Adding rank computation functions separately in utils.py We use the formula of computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. 
 
