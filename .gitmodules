@@ -1,0 +1,3 @@
+[submodule "consistency_models/Clone_of_simo_fork"]
+	path = consistency_models/Clone_of_simo_fork
+	url = https://github.com/rsn870/Clone_of_simo_fork.git
