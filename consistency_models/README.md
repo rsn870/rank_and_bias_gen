@@ -8,6 +8,7 @@ an alternate way of learning the same PF-ODE with the same architecture this obs
 diverse data sources such as training, interpolated and random data which continues more or less as the process evolves backwards in time. This difference ties into the 
 observed bias as well. Above all the study raises questions on utilizing SDEs with unimodal convergent distribution for modelling unconditioned multimodal data. 
 
+## Implementation Details
 
 Added Implementations
 - [x] Clone of Simo Link : 
@@ -15,5 +16,10 @@ Added Implementations
 - [x] Junhss Link :
 - [ ] OpenAI (official) Link : 
 
-Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. We have added rank computation functions separately in utils.py. We will be adding inversion/interpolation functions soon for both of these.We use the formula of computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. Please only refer to the modifications branch in the attached forked repository of Clone of simo's implementation. This has all the changes. This is **not** in sync with the master branch as the changes are not official by any means.
+Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. We have added rank computation functions separately in utils.py. We will be adding inversion/interpolation functions soon for Junhss.We use the formula of computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. Please only refer to the modifications branch in the attached forked repository of Clone of simo's implementation. This has all the changes. This is **not** in sync with the master branch as the changes are not official by any means.
+
+
+Currently OpenAI's implementation and some JAX based implementations are not yet supported. OpenAI has a relatively complicated database that will take some time to port and experiment with. CD based training support has also not been added although this requires a separate diffusion model training step. 
+
+## Results 
 
