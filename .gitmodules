@@ -6,3 +6,7 @@
 	path = Clone_of_simo_fork
 	url = https://github.com/rsn870/Clone_of_simo_fork
 	branch = modifications
+[submodule "consistency_models/--force"]
+	path = consistency_models/--force
+	url = https://github.com/rsn870/Clone_of_simo_fork
+	branch = modifications
