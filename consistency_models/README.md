@@ -11,10 +11,10 @@ observed bias as well. Above all the study raises questions on utilizing SDEs wi
 ## Implementation Details
 
 Added Implementations
-- [x] Clone of Simo Link : [](https://github.com/cloneofsimo/consistency_models)
-- [x] Kinyugo Link : [](https://github.com/Kinyugo/consistency_models)
-- [x] Junhss Link : [](https://github.com/junhsss/consistency-models)
-- [ ] OpenAI (official) Link : [](https://github.com/openai/consistency_models)
+- [x] Clone of Simo Link : [link](https://github.com/cloneofsimo/consistency_models)
+- [x] Kinyugo Link : [link](https://github.com/Kinyugo/consistency_models)
+- [x] Junhss Link : [link](https://github.com/junhsss/consistency-models)
+- [ ] OpenAI (official) Link : [link](https://github.com/openai/consistency_models)
 
 Both Kinyugo and Junhss use Hugging Face's UNet2D Model from the diffusers library. We have added rank computation functions separately in utils.py. We will be adding inversion/interpolation functions soon for Junhss separately.We use the formula of computing the Grammian Matrix and then calculate the effective rank using that as per [this excellent work here](https://minyoungg.github.io/overparam/resources/overparam-v3.pdf). Please use this after features have been extracted using given forward hook implementations. For clone of simo feature extraction has been directly added to the core U-NET class. Please only refer to the modifications branch in the attached forked repository of Clone of simo's implementation. This has all the changes. This is **not** in sync with the master branch as the changes are not official by any means.
 
@@ -23,4 +23,4 @@ Currently OpenAI's implementation and some JAX based implementations are not yet
 
 ## Results 
 
-Attaching a link to a google doc here [temporary until results are ported to this repository](https://docs.google.com/document/d/1JEIkwOn6OsS0MCICi-n6C309u5YczoCI5TPiX18X9Bo/edit) Please do **not** modify without permission. Once all results are updated in the doc they will be ported to this repo. 
+Attaching a link to a google doc here which is [temporary until results are ported to this repository](https://docs.google.com/document/d/1JEIkwOn6OsS0MCICi-n6C309u5YczoCI5TPiX18X9Bo/edit) Please do **not** modify without permission. Once all results are updated in the doc they will be ported to this repo. 
