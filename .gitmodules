@@ -1,7 +1,3 @@
-[submodule "pfgmpp_fork"]
-	path = pfgmpp_fork
-	url = https://github.com/rsn870/pfgmpp_fork.git
-	branch = mods
 [submodule "consistency_models/--force"]
 	path = consistency_models/--force
 	url = https://github.com/rsn870/Clone_of_simo_fork
