@@ -8,3 +8,8 @@ as the authors show the $$ D \arrow \infty$$ is precisely a standard diffusion m
 and perform the experiments for generation for each architecture for different datasets. This yields results that differ from the consistency/diffusion case for finite
 D rather interestingly. 
 
+To Do :
+
+-[] Add codes for rank calculation in bottleneck of U-NET
+-[] Add codes for inversion/interpolation
+
