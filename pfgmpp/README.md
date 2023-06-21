@@ -10,6 +10,6 @@ D rather interestingly.
 
 To Do :
 
--[] Add codes for rank calculation in bottleneck of U-NET
--[] Add codes for inversion/interpolation
+- [] Add codes for rank calculation in bottleneck of U-NET
+- [] Add codes for inversion/interpolation
 
