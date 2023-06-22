@@ -8,8 +8,11 @@ as the authors show the $$ D \arrow \infty$$ is precisely a standard diffusion m
 and perform the experiments for generation for each architecture for different datasets. This yields results that differ from the consistency/diffusion case for finite
 D rather interestingly. Please refer to the mods branch for the modified code.
 
+Please access this folder for compressed datasets. Use the compressed files as per the instructions in PGMPP repo to train models.
+
 To Do :
 
 - [ ] Add codes for rank calculation in bottleneck of U-NET
 - [ ] Add codes for inversion/interpolation
+- [ ] Add all zip files of datasets to drive
 
