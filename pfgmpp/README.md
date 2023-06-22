@@ -15,6 +15,7 @@ D rather interestingly. Please refer to the mods branch for the modified code.
 - [ ] Add codes for rank calculation in bottleneck of U-NET
 - [ ] Add codes for inversion/interpolation
 - [ ] Add all zip files of datasets to drive
+- [ ] Perform experiments to gauge transition sample number
 
 ## Results:
 We maintain the results in this link [Results for pfgmpp](https://docs.google.com/document/d/1JEIkwOn6OsS0MCICi-n6C309u5YczoCI5TPiX18X9Bo/edit#heading=h.836d5ejxumxo) for now and shall port to the repo later.
