@@ -139,7 +139,7 @@ def extract_feature_noised_input(model,input,timestep):
     def hook(model, input, output):
         activation[name] = output.detach()
     return hook
-  h = model.model_fn.mid_block.register_forward_hook(getActivation(name))
+  h = model.mid_block.register_forward_hook(getActivation(name))
   _ = model(input,timestep)[0]
   h.remove()
   return activation['bottleneck']
