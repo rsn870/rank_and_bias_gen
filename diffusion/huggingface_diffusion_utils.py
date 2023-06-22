@@ -40,6 +40,20 @@ def get_interpolated_images_slerp(noise_scheduler,clean_images_1,clean_images_2,
     """
     noisy_images_1 = forward_process(noise_scheduler,clean_images_1,t)
     noisy_images_2 = forward_process(noise_scheduler,clean_images_2,t)
+
+    d1 = len(clean_images_1.shape)
+    d2 = len(clean_images_2.shape)
+
+    if d1 == 3 and d2 == 3:
+        noisy_images_1 = noisy_images_1.view(1,3,clean_images_1.shape[1],clean_images_1.shape[2])
+        noisy_images_2 = noisy_images_2.view(1,3,clean_images_1.shape[1],clean_images_1.shape[2])
+    elif d1 == 4 and d2 == 4:
+        noisy_images_1 = noisy_images_1
+        noisy_images_2 = noisy_images_2
+    else:
+        raise NotImplementedError
+
+
     alpha = torch.tensor(np.linspace(0, 1, n_steps, dtype=np.float32))
 
 
@@ -48,6 +62,12 @@ def get_interpolated_images_slerp(noise_scheduler,clean_images_1,clean_images_2,
     x_shape = noisy_images_1.shape
     intp_x = (torch.sin((1 - alpha[:, None]) * theta) * noisy_images_1.flatten(0, 2)[None].cpu() + torch.sin(alpha[:, None] * theta) * noisy_images_2.flatten(0, 2)[None].cpu()) / torch.sin(theta)
     intp_x = intp_x.view(-1, *x_shape).to(noisy_images_1.device)
+    if d1 == 3 and d2 == 3:
+        intp_x = intp_x.view(n_steps,3,clean_images_1.shape[1],clean_images_1.shape[2])
+    elif d1 == 4 and d2 == 4:
+        intp_x = intp_x.view(-1,3,clean_images_1.shape[2],clean_images_1.shape[3])
+    else:
+        raise NotImplementedError
     return intp_x
     
 
