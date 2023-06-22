@@ -34,7 +34,7 @@ def get_interpolated_images_slerp(noise_scheduler,clean_images_1,clean_images_2,
 
     """
     Send tensors of same shape to this function. If length of shapes are 3 returns a tensor of size n_steps,3,H,W else if both tensors have a batch size of B
-    returns a tensor of size B*n_steps,3,H,W. Interpolation is linear
+    returns a tensor of size B*n_steps,3,H,W. Interpolation is spherical
     
     
     """
@@ -74,7 +74,7 @@ def get_interpolated_images_slerp(noise_scheduler,clean_images_1,clean_images_2,
 def get_interpolated_images_linear(noise_scheduler,clean_images_1,clean_images_2,t,n_steps):
     """
      Send tensors of same shape to this function. If length of shapes are 3 returns a tensor of size n_steps,3,H,W else if both tensors have a batch size of B
-    returns a tensor of size B*n_steps,3,H,W. Interpolation is spherical
+    returns a tensor of size B*n_steps,3,H,W. Interpolation is linear
     
     """
 
@@ -112,7 +112,7 @@ def get_random_images_timestep_residual(n_samples,im_dim,noise_scheduler,model,t
 
     for time in range(noise_scheduler.num_training_steps-1,t,-1):
         with torch.no_grad():
-            residual = model(rand_seed, time).sample
+            residual = model(rand_seed, torch.ones((n_samples))*time.long().to(rand_seed.device)).sample
 
         rand_seed = noise_scheduler.step(residual, t, rand_seed).prev_sample
 
@@ -140,7 +140,7 @@ def extract_feature_noised_input(model,input,timestep):
         activation[name] = output.detach()
     return hook
   h = model.mid_block.register_forward_hook(getActivation(name))
-  _ = model(input,timestep)[0]
+  _ = model(input,torch.ones((input.shape[0]))*timestep.long().to(input.device))[0]
   h.remove()
   return activation['bottleneck']
 
