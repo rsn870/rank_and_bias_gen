@@ -4,5 +4,6 @@ Exploring the bias of a set of SDE based unconditional generative models under v
 ## To-Do
 - [ ] Add code for Yang Song's Score matching SDE
 - [ ] Add code for Heat Dissipation models by Arno Solin
+- [ ] Add code for EBMs with a SGLD sampling process
 - [ ] Check if Dirichlet Diffusion Models (DDSM) can be used for image datasets such as CIFAR
 - [ ] Add code for cold diffusion models
